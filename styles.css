@@ -1,0 +1,159 @@
+:root{
+  --bg: #ffffff;
+  --text: #16181d;
+  --muted: #5c606b;
+  --brand: #0b6cff;
+  --brand-dark:#084fb7;
+  --card: #f6f7fb;
+  --border: #e6e8ef;
+  --shadow: 0 8px 24px rgba(22,24,29,.08);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+}
+
+.container{
+  width:min(1120px, 92%);
+  margin-inline:auto;
+}
+
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:#0e1116; color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav{
+  display:flex; align-items:center; gap:16px;
+  padding:14px 0;
+}
+.brand{
+  display:flex; align-items:baseline; gap:10px;
+  color:#fff; text-decoration:none; font-weight:700; letter-spacing:.4px;
+}
+.brand-mark{
+  background:#e11d48; color:#fff; font-size:.74rem;
+  padding:3px 6px; border-radius:3px;
+}
+.brand-name{font-size:1rem}
+
+.nav-links{
+  margin-left:auto;
+  display:flex; gap:18px; align-items:center;
+}
+.nav-links a{
+  color:#cdd3df; text-decoration:none; font-weight:500; font-size:.95rem;
+}
+.nav-links a:hover{color:#fff}
+
+.btn{
+  display:inline-block; padding:10px 14px; border-radius:10px;
+  font-weight:600; text-decoration:none;
+  border:1px solid transparent; transition:.2s ease;
+}
+.btn.primary{background:var(--brand); color:#fff}
+.btn.primary:hover{background:var(--brand-dark)}
+
+.desktop-only{display:none}
+
+.nav-toggle{
+  margin-left:auto; display:inline-flex; flex-direction:column; gap:4px;
+  width:38px; height:34px; align-items:center; justify-content:center;
+  background:transparent; border:1px solid rgba(255,255,255,.2); border-radius:8px;
+}
+.nav-toggle .bar{width:18px; height:2px; background:#fff; display:block}
+
+@media (min-width: 980px){
+  .nav-toggle{display:none}
+  .desktop-only{display:inline-block}
+}
+
+/* Intro */
+.section-intro{padding:48px 0 20px}
+.eyebrow{
+  color:var(--brand-dark); font-size:1rem; letter-spacing:.2px; margin:0 0 10px;
+  text-align:center; font-weight:700;
+}
+.headline{
+  margin:0 auto 14px; text-align:center;
+  font-size: clamp(1.6rem, 1rem + 2vw, 2.4rem);
+  font-weight:800;
+}
+.lede{
+  margin:0 auto; text-align:center; color:var(--muted);
+  max-width:900px; font-size:1.02rem;
+}
+
+/* Cards */
+.section-cards{padding:22px 0 40px}
+.grid-4{
+  display:grid; gap:22px;
+  grid-template-columns: repeat(1, minmax(0,1fr));
+}
+@media (min-width:720px){
+  .grid-4{grid-template-columns: repeat(2, 1fr)}
+}
+@media (min-width:1080px){
+  .grid-4{grid-template-columns: repeat(4, 1fr)}
+}
+
+.card{
+  background:#fff; border:1px solid var(--border); border-radius:14px;
+  padding:22px; box-shadow:var(--shadow);
+  display:flex; flex-direction:column; gap:8px; min-height:230px;
+}
+.card .icon{
+  width:44px; height:44px; color:#ef4444;
+  display:grid; place-items:center;
+  background:#fff1f2; border-radius:10px; border:1px solid #ffe4e6;
+  margin-bottom:6px;
+}
+.card .icon svg{width:26px; height:26px}
+.card h3{margin:0 0 4px; font-size:1.05rem}
+.card p{margin:0; color:var(--muted)}
+
+/* Stats strip */
+.section-stats{
+  padding:28px 0 36px; background:#f2f6ff; border-top:1px solid #e7ecff;
+}
+.stats{
+  display:grid; gap:22px;
+  grid-template-columns:repeat(2,1fr);
+}
+@media (min-width:860px){
+  .stats{grid-template-columns:repeat(5,1fr)}
+}
+.stat{text-align:center}
+.value{
+  font-weight:800; font-size: clamp(1.6rem, 1rem + 2vw, 2.2rem);
+}
+.label{
+  color:#63708a; font-size:.9rem;
+}
+
+/* Chat bubble (visual only) */
+.chat-fab{
+  position:fixed; right:18px; bottom:18px;
+  border:0; padding:12px 14px; border-radius:999px;
+  background:#4f46e5; color:#fff; font-weight:700; box-shadow:var(--shadow);
+  cursor:pointer;
+}
+
+.hidden{display:none!important}
+
+/* Mobile menu overlay */
+.mobile-menu{
+  background:#0e1116; border-top:1px solid rgba(255,255,255,.08);
+  padding:10px 0 16px;
+}
+.mobile-menu a{
+  display:block; padding:10px 6px; color:#cdd3df; text-decoration:none;
+}
+.mobile-menu a:hover{color:#fff}
+
